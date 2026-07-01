@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SalesCaddie — Fonts + Tokens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--pg:#0c0e12;--pnl:#14171d;--ln:#262b34;--mut:#98a2b3;--ink:#e8eaed;
+    --fig:'Figtree',sans-serif; --atk:'Atkinson Hyperlegible Next','Atkinson Hyperlegible',sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--pg);color:var(--ink);font-family:var(--fig);padding:40px 18px 100px}
+  .wrap{max-width:1040px;margin:0 auto}
+  h1{font-size:30px;margin:0 0 6px}
+  .lede{color:var(--mut);max-width:74ch;margin:0 0 8px}
+  .note{color:var(--mut);font-size:13px;background:var(--pnl);border:1px solid var(--ln);border-radius:12px;padding:12px 16px;margin:12px 0 24px}
+  .note b{color:var(--ink)}
+  h2.sec{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#7cc5d8;margin:30px 0 12px}
+
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:780px){.cmp{grid-template-columns:1fr}}
+  .col{border:1px solid var(--ln);border-radius:16px;overflow:hidden}
+  .col .hd{padding:12px 18px;background:var(--pnl);border-bottom:1px solid var(--ln)}
+  .col .hd .fn{font-size:16px;font-weight:700}
+  .col .hd .tag{font-size:11.5px;color:var(--mut)}
+  .demo{background:#f8fafc;color:#0f172a;padding:22px}
+  .demo .big{font-size:26px;font-weight:800;margin:0 0 4px;line-height:1.15}
+  .demo p{font-size:14px;color:#475569;margin:0 0 14px}
+  .demo .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px}
+  .demo .k{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#0891b2;margin-bottom:4px;font-weight:700}
+  .demo .num{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;margin:0}
+  .demo .sub{font-size:12.5px;color:#64748b;margin:2px 0 0}
+  .demo .row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .b{border:0;border-radius:9px;padding:9px 14px;font-weight:700;font-size:13.5px;cursor:default;font-family:inherit}
+  .glyph{font-size:13px;color:#334155;margin-top:12px;font-variant-numeric:tabular-nums}
+  .glyph b{color:#0f172a}
+
+  .assess{font-size:13px;color:var(--mut);padding:12px 18px;border-top:1px solid var(--ln);background:#101318}
+  .assess b{color:var(--ink)}
+  .pro{color:#9fe0c8}.con{color:#ffc96b}
+
+  /* tokens */
+  .tok{border:1px solid var(--ln);border-radius:16px;padding:18px 20px;background:var(--pnl)}
+  .trow{margin:14px 0}
+  .trow .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:6px}
+  .swset{display:flex;gap:8px;flex-wrap:wrap}
+  .tk{border-radius:9px;overflow:hidden;border:1px solid rgba(255,255,255,.08);width:104px}
+  .tk .c{height:34px}
+  .tk .m{font-size:9.5px;font-family:'JetBrains Mono';padding:4px 6px;color:var(--mut);text-align:center}
+  .tk .nm{font-size:10.5px;padding:4px 6px 0;text-align:center;color:var(--ink)}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .lab{font-size:11px;color:var(--mut);width:100%;margin-top:4px}
+  .foot{color:var(--mut);font-size:14px;margin-top:30px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Your two fonts + what a full token set looks like</h1>
+  <p class="lede">Same product UI rendered in each font so you can judge them side by side, then an example of the "button colors + success/failure colors" you asked about — the semantic token layer.</p>
+  <div class="note"><b>How to read the fonts:</b> for a data product, watch the <b>numbers</b> (do they line up and read cleanly?), the <b>body text</b> at small size, and whether the <b>headings</b> have enough character. This page's own text is set in Figtree.</div>
+
+  <h2 class="sec">Font A vs Font B — same UI</h2>
+  <div class="cmp">
+    <div class="col">
+      <div class="hd"><div class="fn" style="font-family:var(--atk)">Atkinson Hyperlegible Next</div><div class="tag">accessibility-first · Braille Institute</div></div>
+      <div class="demo" style="font-family:var(--atk)">
+        <p class="big">Every customer, remembered.</p>
+        <p>Sales reps close deals; SalesCaddie makes sure every customer feels it — a handwritten note and a gift within 24 hours.</p>
+        <div class="card">
+          <div class="k">Gifts delivered</div>
+          <p class="num">1,284</p>
+          <p class="sub">98.6% within SLA · Illinois 0O in view</p>
+          <div class="row">
+            <button class="b" style="background:#0891b2;color:#fff">Send a gift</button>
+            <button class="b" style="background:#fce7f3;color:#9d174d">Details</button>
+          </div>
+          <p class="glyph"><b>Il1 O0 · rn/m · 3,481.90</b> — hard-to-confuse characters</p>
+        </div>
+      </div>
+      <div class="assess"><b>Verdict:</b> <span class="pro">superb legibility, distinct characters, calm and honest</span>; the accessibility story fits "human/trustworthy." <span class="con">Less expressive as a big display face.</span> Best as your <b>body/UI</b> workhorse.</div>
+    </div>
+
+    <div class="col">
+      <div class="hd"><div class="fn" style="font-family:var(--fig)">Figtree</div><div class="tag">built for UI · Erik Kennedy</div></div>
+      <div class="demo" style="font-family:var(--fig)">
+        <p class="big">Every customer, remembered.</p>
+        <p>Sales reps close deals; SalesCaddie makes sure every customer feels it — a handwritten note and a gift within 24 hours.</p>
+        <div class="card">
+          <div class="k">Gifts delivered</div>
+          <p class="num">1,284</p>
+          <p class="sub">98.6% within SLA · Illinois 0O in view</p>
+          <div class="row">
+            <button class="b" style="background:#0891b2;color:#fff">Send a gift</button>
+            <button class="b" style="background:#fce7f3;color:#9d174d">Details</button>
+          </div>
+          <p class="glyph"><b>Il1 O0 · rn/m · 3,481.90</b> — friendly geometric shapes</p>
+        </div>
+      </div>
+      <div class="assess"><b>Verdict:</b> <span class="pro">friendly, modern, purpose-built for interfaces</span>; comfortable for headings <i>and</i> body. A safe, strong all-rounder. <span class="con">Less of a distinct accessibility story.</span></div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:16px"><b>Corrected recommendation (per the research):</b> don't pair Figtree <i>with</i> Atkinson — two workhorse sans-serifs read as ambiguous ("which one is the brand voice?"). The right rule is <b>one workhorse + one display</b>, or a single font. Two clean paths — (1) <b>Figtree (UI/body) + a display like Fraunces or Bricolage Grotesque for headings</b> + a mono for numbers (the friendly route, best fit for SalesCaddie); or (2) <b>Atkinson Hyperlegible Next (body) + a serif display</b> if "the readable product" is the brand story. Each palette below now demonstrates a specific header font.</div>
+
+  <h2 class="sec">What "button colors + success/failure colors" means — the token layer</h2>
+  <p class="lede" style="margin-bottom:14px">A palette isn't just brand colors — it's a set of <b>named jobs</b> (tokens). Here's the semantic layer on palette #1 (Cyan × Magenta) so you can see it. This is roughly what we hand Claude Design.</p>
+  <div class="tok">
+    <div class="trow">
+      <div class="l">Primary button — its states</div>
+      <div class="btns">
+        <button class="b" style="background:#0891b2;color:#fff">Default #0891B2</button>
+        <button class="b" style="background:#0e7490;color:#fff">Hover #0E7490</button>
+        <button class="b" style="background:#155e75;color:#fff">Pressed #155E75</button>
+        <button class="b" style="background:#cbd5e1;color:#94a3b8">Disabled</button>
+        <span class="lab">Same button, four states — every interactive element needs these.</span>
+      </div>
+    </div>
+    <div class="trow">
+      <div class="l">Secondary / accent buttons</div>
+      <div class="btns">
+        <button class="b" style="background:#db2777;color:#fff">Secondary #DB2777</button>
+        <button class="b" style="background:#facc15;color:#3d2c00">Accent #FACC15</button>
+        <button class="b" style="background:#fff;color:#0891b2;border:1px solid #0891b2">Outline</button>
+      </div>
+    </div>
+    <div class="trow">
+      <div class="l">Status / feedback colors (success · warning · error · info)</div>
+      <div class="swset">
+        <div class="tk"><div class="c" style="background:#10b981"></div><div class="nm">Success</div><div class="m">#10B981</div></div>
+        <div class="tk"><div class="c" style="background:#eab308"></div><div class="nm">Warning</div><div class="m">#EAB308</div></div>
+        <div class="tk"><div class="c" style="background:#ef4444"></div><div class="nm">Error</div><div class="m">#EF4444</div></div>
+        <div class="tk"><div class="c" style="background:#0891b2"></div><div class="nm">Info</div><div class="m">#0891B2</div></div>
+      </div>
+      <span class="lab">These are <b>functional</b> — success/error read the same across every app, so they sit outside the brand palette (green=go, red=stop). Warning reuses your yellow; info reuses your cyan.</span>
+    </div>
+    <div class="trow">
+      <div class="l">Surfaces & text (the quiet 60%)</div>
+      <div class="swset">
+        <div class="tk"><div class="c" style="background:#f8fafc"></div><div class="nm">App bg</div><div class="m">#F8FAFC</div></div>
+        <div class="tk"><div class="c" style="background:#ffffff"></div><div class="nm">Surface</div><div class="m">#FFFFFF</div></div>
+        <div class="tk"><div class="c" style="background:#e2e8f0"></div><div class="nm">Border</div><div class="m">#E2E8F0</div></div>
+        <div class="tk"><div class="c" style="background:#64748b"></div><div class="nm">Muted txt</div><div class="m">#64748B</div></div>
+        <div class="tk"><div class="c" style="background:#0f172a"></div><div class="nm">Text</div><div class="m">#0F172A</div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Fonts loaded live from Google Fonts. The deep research (dispatched) will make the token method rigorous — then I'll build the chosen palette into a full, correct token set with your font.</p>
+</div>
+</body>
+</html>
